@@ -9,7 +9,6 @@ end
 ver = '1.2.9'
 core = "xapian-core-#{ver}"
 bindings = "xapian-bindings-#{ver}"
-xapian_config = "#{Dir.pwd}/#{core}/xapian-config"
 
 task :default do
 	[core,bindings].each do |x|
@@ -18,25 +17,20 @@ task :default do
 
 	prefix = Dir.pwd
 
-	system! "mkdir -p lib"
-
 	Dir.chdir core do
 		system! "./configure --prefix=#{prefix} --exec-prefix=#{prefix}"
-		ENV['LDFLAGS'] = "-R#{prefix}/lib"
 		system! "make clean all"
-		ENV['LDFLAGS'] = ""
-		system! "cp -RL .libs/* ../lib/"
+		system! "make install"
 	end
 
 	Dir.chdir bindings do
 		ENV['RUBY'] ||= "#{c['bindir']}/#{c['RUBY_INSTALL_NAME']}"
-		ENV['XAPIAN_CONFIG'] = xapian_config
+		ENV['XAPIAN_CONFIG'] = "#{prefix}/bin/xapian-config"
 		system! "./configure --prefix=#{prefix} --exec-prefix=#{prefix} --with-ruby"
-		ENV['LDFLAGS'] = "-R#{prefix}/lib"
-		system! "make clean all"
-		ENV['LDFLAGS'] = ""
+		system! "make clean all LDFLAGS=-Wl,-rpath,#{prefix}/lib"
 	end
 
 	system! "cp -RL #{bindings}/ruby/.libs/_xapian.* lib"
 	system! "cp #{bindings}/ruby/xapian.rb lib"
 end
+
