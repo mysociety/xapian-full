@@ -4,7 +4,7 @@ c = Config::CONFIG
 begin
     require 'bundler'
     have_bundler = true
-rescue
+rescue LoadError
     have_bundler = false
 end
 
@@ -37,7 +37,7 @@ task :default do
 		if have_bundler
 			# Maybe Bundler is building us in a temporary directory, and will move us to
 			# the system ruby gems directory once built.
-			system! "make clean all LDFLAGS='-R#{Bundler.rubygems.gem_dir}/gems/xapian-full-alaveteli-1.2.9.4/lib'"
+			system! "make clean all LDFLAGS='-R#{Bundler.rubygems.gem_dir}/gems/xapian-full-alaveteli-1.2.9.5/lib'"
 		else
 			system! "make clean all"
 		end
