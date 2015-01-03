@@ -1,5 +1,5 @@
 require 'rbconfig'
-c = Config::CONFIG
+c = RbConfig::CONFIG
 
 begin
     require 'bundler'
