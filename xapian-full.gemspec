@@ -2,13 +2,13 @@
 
 Gem::Specification.new do |s|
   s.name = %q{xapian-full-alaveteli}
-  s.version = "1.2.9.5"
+  s.version = "1.2.9.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Tom Adams", "Rich Lane", "Seb Bacon"]
-  s.date = %q{2012-06-01}
+  s.authors = ["Tom Adams", "Rich Lane", "Seb Bacon", "Louise Crow"]
+  s.date = %q{2015-03-31}
   s.description = %q{Xapian bindings for Ruby without dependency on system Xapian library}
-  s.email = %q{rlane@club.cc.cmu.edu}
+  s.email = %q{louise@mysociety.org}
   s.extensions = ["Rakefile"]
   s.files = [
      "lib/xapian.rb",
