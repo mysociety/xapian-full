@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.version = "1.2.9.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Tom Adams", "Rich Lane", "Seb Bacon", "Louise Crow"]
+  s.authors = ["Tom Adams", "Rich Lane", "Seb Bacon", "Alexey Pisarenko", "Louise Crow"]
   s.date = %q{2015-03-31}
   s.description = %q{Xapian bindings for Ruby without dependency on system Xapian library}
   s.email = %q{louise@mysociety.org}
