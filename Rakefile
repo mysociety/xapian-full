@@ -13,13 +13,13 @@ def system!(cmd)
 	system(cmd) or raise
 end
 
-ver = '1.2.9'
+ver = '1.2.21'
 core = "xapian-core-#{ver}"
 bindings = "xapian-bindings-#{ver}"
 
 task :default do
 	[core,bindings].each do |x|
-		system! "tar -xzvf #{x}.tar.gz"
+		system! "tar -xJvf #{x}.tar.xz"
 	end
 
 	prefix = Dir.pwd
@@ -37,7 +37,7 @@ task :default do
 		if have_bundler
 			# Maybe Bundler is building us in a temporary directory, and will move us to
 			# the system ruby gems directory once built.
-			system! "make clean all LDFLAGS='-R#{Bundler.rubygems.gem_dir}/gems/xapian-full-alaveteli-1.2.9.7/lib'"
+			system! "make clean all LDFLAGS='-R#{Bundler.rubygems.gem_dir}/gems/xapian-full-alaveteli-1.2.21.1/lib'"
 		else
 			system! "make clean all"
 		end
