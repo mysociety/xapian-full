@@ -13,7 +13,7 @@ def system!(cmd)
 	system(cmd) or raise
 end
 
-ver = '1.2.21'
+ver = '1.4.11'
 core = "xapian-core-#{ver}"
 bindings = "xapian-bindings-#{ver}"
 
@@ -37,7 +37,7 @@ task :default do
 		if have_bundler
 			# Maybe Bundler is building us in a temporary directory, and will move us to
 			# the system ruby gems directory once built.
-			system! "make clean all LDFLAGS='-R#{Bundler.rubygems.gem_dir}/gems/xapian-full-alaveteli-1.2.21.1/lib'"
+			system! "make clean all LDFLAGS='-R#{Bundler.rubygems.gem_dir}/gems/xapian-full-alaveteli-1.4.11.1/lib'"
 		else
 			system! "make clean all"
 		end
