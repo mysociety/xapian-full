@@ -2,20 +2,20 @@
 
 Gem::Specification.new do |s|
   s.name = %q{xapian-full-alaveteli}
-  s.version = "1.4.15.1"
+  s.version = "1.4.17.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tom Adams", "Rich Lane", "Seb Bacon", "Alexey Pisarenko", "Louise Crow", "Ian Chard", "Sam Pearson"]
   s.homepage = %q{https://github.com/mysociety/xapian-full}
-  s.date = %q{2020-05-21}
+  s.date = %q{2021-01-07}
   s.description = %q{Xapian bindings for Ruby without dependency on system Xapian library}
   s.email = %q{mysociety@alaveteli.org}
   s.extensions = ["Rakefile"]
   s.files = [
      "lib/xapian.rb",
      "Rakefile",
-     "xapian-bindings-1.4.15.tar.xz",
-     "xapian-core-1.4.15.tar.xz",
+     "xapian-bindings-1.4.17.tar.xz",
+     "xapian-core-1.4.17.tar.xz",
      "xapian-full.gemspec",
   ]
   s.rdoc_options = ["--charset=UTF-8"]
