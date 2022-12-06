@@ -13,7 +13,7 @@ def system!(cmd)
 	system(cmd) or raise
 end
 
-ver = '1.4.11'
+ver = '1.4.21'
 iter = '1'
 core = "xapian-core-#{ver}"
 bindings = "xapian-bindings-#{ver}"
