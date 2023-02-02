@@ -2,19 +2,19 @@
 
 Gem::Specification.new do |s|
   s.name = %q{xapian-full-alaveteli}
-  s.version = "1.4.21.1"
+  s.version = "1.4.22.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Tom Adams", "Rich Lane", "Seb Bacon", "Alexey Pisarenko", "Louise Crow", "Ian Chard", "Sam Pearson"]
+  s.authors = ["Tom Adams", "Rich Lane", "Seb Bacon", "Alexey Pisarenko", "Louise Crow", "Ian Chard", "Sam Pearson", "Graeme Porteous"]
   s.homepage = %q{https://github.com/mysociety/xapian-full}
-  s.date = %q{2022-12-06}
+  s.date = %q{2023-02-02}
   s.description = %q{Xapian bindings for Ruby without dependency on system Xapian library}
   s.email = %q{mysociety@alaveteli.org}
   s.extensions = ["Rakefile"]
   s.files = [
      "Rakefile",
-     "ports/archives/xapian-bindings-1.4.21.tar.xz",
-     "ports/archives/xapian-core-1.4.21.tar.xz",
+     "ports/archives/xapian-bindings-1.4.22.tar.xz",
+     "ports/archives/xapian-core-1.4.22.tar.xz",
      "xapian-full.gemspec",
   ]
   s.files += Dir.glob("patches/**/*")
