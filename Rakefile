@@ -7,7 +7,7 @@ Rake::TestTask.new do |t|
   t.verbose = true
 end
 
-ver = '1.4.21'
+ver = '1.4.22'
 package_root_dir = Dir.pwd
 
 task :core do
@@ -15,7 +15,7 @@ task :core do
     recipe.target = File.join(package_root_dir, 'ports')
     recipe.files << {
       url: "https://oligarchy.co.uk/xapian/#{ver}/xapian-core-#{ver}.tar.xz",
-      sha256: '80f86034d2fb55900795481dfae681bfaa10efbe818abad3622cdc0c55e06f88'
+      sha256: '05884af00b06702ce486057d62a3bfbe6606cf965ada0f5ea570b328a2fa1ea8'
     }
     recipe.configure_options = [] # removes MiniPortile defaults
 
@@ -34,7 +34,7 @@ task bindings: [:core] do
     recipe.target = File.join(package_root_dir, 'ports')
     recipe.files << {
       url: "https://oligarchy.co.uk/xapian/#{ver}/xapian-bindings-#{ver}.tar.xz",
-      sha256: 'e7bf1e4982b91f841289d19214021d88371ca2a6c7304df59049d7da78b83ced'
+      sha256: '6b5454833ac52a3e32c0bb3a7290a5a2b50488d8918f2a45269557e4de9a31e5'
     }
     recipe.configure_options = ['--with-ruby']
 
