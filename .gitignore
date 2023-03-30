@@ -1,2 +1,5 @@
 xapian-full-alaveteli-*.gem
 Gemfile.lock
+!/ports
+/ports/*
+!/ports/archives

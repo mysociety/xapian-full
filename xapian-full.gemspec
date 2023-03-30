@@ -12,12 +12,13 @@ Gem::Specification.new do |s|
   s.email = %q{mysociety@alaveteli.org}
   s.extensions = ["Rakefile"]
   s.files = [
-     "lib/xapian.rb",
      "Rakefile",
-     "xapian-bindings-1.4.21.tar.xz",
-     "xapian-core-1.4.21.tar.xz",
+     "ports/archives/xapian-bindings-1.4.21.tar.xz",
+     "ports/archives/xapian-core-1.4.21.tar.xz",
      "xapian-full.gemspec",
   ]
+  s.files += Dir.glob("patches/**/*")
+
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.required_ruby_version = ">= 2.7.0"
@@ -28,4 +29,7 @@ Gem::Specification.new do |s|
     s.specification_version = 3
   else
   end
+
+  s.add_dependency 'mini_portile2', '~> 2.8'
+  s.add_dependency 'rake', '~> 13.0'
 end
