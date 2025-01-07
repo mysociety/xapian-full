@@ -28,6 +28,7 @@ task :core do
 end
 
 task bindings: [:core] do
+  ENV['LIBS'] = RbConfig::CONFIG["LIBRUBYARG"]
   ENV['RUBY_LIB'] = ENV['RUBY_LIB_ARCH'] = File.join(__dir__, 'lib')
 
   MiniPortile.new("xapian-bindings", ver).tap do |recipe|
